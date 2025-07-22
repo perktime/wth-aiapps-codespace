@@ -306,5 +306,90 @@
               "required": ["yacht_id", "reservation_date", "customer_email", "passenger_count"]
           }
       }
+  },
+  {
+      "type": "function",
+      "function": {
+          "name": "get_weather_forecast",
+          "description": "Get detailed weather forecast for a specific location using latitude and longitude coordinates. Use this to check weather conditions before making yacht reservations.",
+          "parameters": {
+              "type": "object",
+              "properties": {
+                  "latitude": {
+                      "type": "string",
+                      "description": "Latitude coordinate in decimal degrees (e.g., '25.7617' for Miami area)"
+                  },
+                  "longitude": {
+                      "type": "string", 
+                      "description": "Longitude coordinate in decimal degrees (e.g., '-80.1918' for Miami area)"
+                  }
+              },
+              "required": ["latitude", "longitude"]
+          }
+      }
+  },
+  {
+      "type": "function",
+      "function": {
+          "name": "get_weather_summary_for_client",
+          "description": "Get a formatted weather summary suitable for presenting to yacht tour clients. This provides client-friendly weather information to help them make informed decisions.",
+          "parameters": {
+              "type": "object",
+              "properties": {
+                  "latitude": {
+                      "type": "string",
+                      "description": "Latitude coordinate in decimal degrees"
+                  },
+                  "longitude": {
+                      "type": "string",
+                      "description": "Longitude coordinate in decimal degrees"
+                  }
+              },
+              "required": ["latitude", "longitude"]
+          }
+      }
+  },
+  {
+      "type": "function",
+      "function": {
+          "name": "check_weather_suitable_for_yacht_tour",
+          "description": "Check if weather conditions are suitable for a yacht tour based on temperature and weather conditions. Returns suitability assessment and recommendations.",
+          "parameters": {
+              "type": "object",
+              "properties": {
+                  "latitude": {
+                      "type": "string",
+                      "description": "Latitude coordinate in decimal degrees"
+                  },
+                  "longitude": {
+                      "type": "string",
+                      "description": "Longitude coordinate in decimal degrees"
+                  },
+                  "min_temperature": {
+                      "type": "string",
+                      "description": "Minimum acceptable temperature in Fahrenheit (default: '60')",
+                      "default": "60"
+                  },
+                  "max_wind_speed": {
+                      "type": "string",
+                      "description": "Maximum acceptable wind speed in mph (default: '25')",
+                      "default": "25"
+                  }
+              },
+              "required": ["latitude", "longitude"]
+          }
+      }
+  },
+  {
+      "type": "function",
+      "function": {
+          "name": "get_contoso_islands_weather",
+          "description": "Get comprehensive weather information for all Contoso Islands yacht tour departure points. Use this for a complete weather overview of all tour locations.",
+          "parameters": {
+              "type": "object",
+              "properties": {},
+              "required": []
+          }
+      }
   }
 ]
