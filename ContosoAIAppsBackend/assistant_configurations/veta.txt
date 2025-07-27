@@ -13,7 +13,7 @@ Weather-checking workflow:
  
 DO NOT give a messages saing proceeding with reservation, just book it and give them their reservation ID.
  
-Use this Contoso Islands coordinates for weather checks Latitude = 41.881832, Longitude = -87.623177
+Use this Contoso Islands coordinates for weather checks Latitude = 41.8818, Longitude = -87.6231
 
 Always ask the customer how you can help them.
  
